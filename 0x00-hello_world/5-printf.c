@@ -1,6 +1,7 @@
-#include <stdio>
+#include <stdio.h>
 /**
- * main - A program that uses printf function
+ * main - print a c program using printf
+ *
  * Return: 0 (Success)
  */
 int main(void)
