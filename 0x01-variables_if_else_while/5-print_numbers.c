@@ -1,6 +1,9 @@
 #include <stdio.h>
+
 #include <stdlib.h>
+
 #include <time.h>
+
 
 /**
  * main - Entry point
@@ -16,7 +19,7 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 		printf("%d", i);
-	printf('\n');
+	printf("\n");
 
 	return (0);
 
