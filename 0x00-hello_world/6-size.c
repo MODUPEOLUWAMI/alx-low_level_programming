@@ -2,9 +2,9 @@
 
 
 /**
- * main - Print the size of various computer typeS based on
+ * main - Prints the size of various computer typesa based on
  * the computer it is complied and run on..
- * Return: Always 0.
+ * Return: Always 0
  */
 
 int main(void)
