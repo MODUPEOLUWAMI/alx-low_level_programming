@@ -1,4 +1,6 @@
 #include <stdio.h>
+
+
 /**
  * main - Print the size of various computer typeS based on
  * the computer it is complied and run on..
