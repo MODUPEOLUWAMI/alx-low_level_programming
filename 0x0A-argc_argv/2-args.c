@@ -3,19 +3,19 @@
 
 /**
  * main - prints all arg content
- * @agrc: argument count
- * @agrv: argument vector
+ * @argc: argument count
+ * @argv: argument vector
  *
  * return: 0
  */
 
-int main(int agrc, char *agrv[])
+int main(int argc, char *argv[])
 {
 	int i;
 
-	for ( i = 0; i < agrc; i++)
+	for ( i = 0; i < argc; i++)
 	{
-		printf("%s\n", agrv[i]);
+		printf("%s\n", argv[i]);
 	}
 	return (0);
 }
