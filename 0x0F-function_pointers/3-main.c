@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	
+
 	result = func(arg1, arg2);
 
 	printf("%d\n", result);
