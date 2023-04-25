@@ -28,7 +28,7 @@ char *create_buffer(char *file)
 }
 
 /**
- * close_file -closes file descriptors
+ * close_file - closes file descriptors
  * @fd: the file descriptor to be closed
  */
 
@@ -38,14 +38,14 @@ void close_file(int fd)
 
 	a = close(fd);
 
-	if (c == -1)
+	if (a == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
 
-/** 
+/**
  * main - copies the contents of one file to another file
  * @argc: the number of arguments
  * @argv: an array of pointers to the aruments
@@ -68,21 +68,21 @@ int main(int argc, char *argv[])
 	}
 
 	buffers = create_buffer(argv[2]);
-	from = open(argv[1], O_RONLY);
-	a = read(from, buffer, 1024);
+	from = open(argv[1], O_RDONLY);
+	a = read(from, buffers, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 		if (from == -1 || a == -1)
 		{
-			dprint(STDERR_FILENO,
+			dprintf(STDERR_FILENO,
 					"Error: Can't write to %s\n", argv[1]);
 					free(buffers);
 					exit(98);
 		}
 
-		w = write(to, buffers, r);
-		if (to == -1 || w == -1)
+		b = write(to, buffers, a);
+		if (to == -1 || b == -1)
 		{
 			dprintf(STDERR_FILENO,
 					"Error: Can't write to %s\n", argv[2]);
@@ -90,10 +90,10 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		r = read(from, buffers, 1024);
+		a = read(from, buffers, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
 
-	}while (r > 0);
+	} while (a > 0);
 
 	free(buffers);
 	close_file(from);
@@ -101,4 +101,4 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-		         
+
